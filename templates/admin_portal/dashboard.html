@@ -1,0 +1,213 @@
+{% extends 'admin_portal/base.html' %}
+
+{% block title %}Admin Dashboard - College Management System{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4 admin-dashboard">
+    <h1 class="h3 mb-4">Admin Dashboard</h1>
+    
+    <!-- Stats Overview -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Students
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_students }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Faculty Members
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_faculty }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Upcoming Events
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ upcoming_events }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Placement Companies
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ placement_companies }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-building fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <h2 class="h4 mb-4">Quick Actions</h2>
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Student Management</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Add, view, or manage student records</p>
+                    <a href="{% url 'admin_portal:students_list' %}" class="btn btn-primary btn-block mb-2">View All Students</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">Add New Student</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Faculty Management</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Add, view, or manage faculty records</p>
+                    <a href="{% url 'admin_portal:faculty_list' %}" class="btn btn-primary btn-block mb-2">View All Faculty</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">Add New Faculty</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Event Management</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Create and manage college events</p>
+                    <a href="{% url 'admin_portal:events_list' %}" class="btn btn-primary btn-block mb-2">View All Events</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">Add New Event</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Placement Management</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Manage placement companies and activities</p>
+                    <a href="{% url 'admin_portal:placements_list' %}" class="btn btn-primary btn-block mb-2">View All Companies</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">Add New Company</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Reports</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Generate and view various reports</p>
+                    <a href="#" class="btn btn-primary btn-block mb-2">Student Reports</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">Placement Reports</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">System Settings</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Configure system settings and preferences</p>
+                    <a href="#" class="btn btn-primary btn-block mb-2">General Settings</a>
+                    <a href="#" class="btn btn-outline-primary btn-block">User Management</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <h2 class="h4 mb-4">Recent Activity</h2>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">System Logs</h6>
+        </div>
+        <div class="card-body">
+            <div class="list-group">
+                <div class="list-group-item border-left-success border-left-4 mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">New student added</h5>
+                        <small>Today, 10:30 AM</small>
+                    </div>
+                    <p class="mb-1">Admin user added John Doe to Computer Science department</p>
+                </div>
+                <div class="list-group-item border-left-primary border-left-4 mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Event updated</h5>
+                        <small>Yesterday, 3:45 PM</small>
+                    </div>
+                    <p class="mb-1">Annual Tech Symposium date changed to November 15, 2023</p>
+                </div>
+                <div class="list-group-item border-left-info border-left-4 mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">New company registered</h5>
+                        <small>May 8, 2023, 11:20 AM</small>
+                    </div>
+                    <p class="mb-1">TechCorp added to placement portal for campus recruitment</p>
+                </div>
+                <div class="list-group-item border-left-warning border-left-4 mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Faculty profile updated</h5>
+                        <small>May 7, 2023, 2:15 PM</small>
+                    </div>
+                    <p class="mb-1">Dr. Sarah Johnson updated professional qualifications</p>
+                </div>
+                <div class="list-group-item border-left-secondary border-left-4">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">System maintenance</h5>
+                        <small>May 5, 2023, 9:00 PM</small>
+                    </div>
+                    <p class="mb-1">Database backup and system update performed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

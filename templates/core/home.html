@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - College Management System{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="bg-white shadow-sm">
+    <div class="container py-4 d-flex justify-content-between align-items-center">
+        <h1 class="h3 mb-0">College Management System</h1>
+        <div>
+            <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary me-2">Login</a>
+            <a href="{% url 'core:about' %}" class="btn btn-primary">About Us</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h2 class="display-4 fw-bold mb-4">Welcome to Our College Management System</h2>
+        <p class="lead mb-4">A comprehensive platform for students, faculty, and administrators to manage academic activities efficiently.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'accounts:login' %}" class="btn btn-light btn-lg">Get Started</a>
+            <a href="{% url 'core:about' %}" class="btn btn-outline-light btn-lg">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Summary</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">For Students</h3>
+                        <p class="card-text text-muted">Access academic information and resources</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">View attendance and marks</li>
+                            <li class="list-group-item">Access event information</li>
+                            <li class="list-group-item">Explore placement opportunities</li>
+                            <li class="list-group-item">Manage personal profile</li>
+                        </ul>
+                        <a href="{% url 'accounts:login' %}?user_type=student" class="btn btn-primary w-100">Student Login</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">For Faculty</h3>
+                        <p class="card-text text-muted">Manage classes and student information</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Manage student details and marks</li>
+                            <li class="list-group-item">Update attendance records</li>
+                            <li class="list-group-item">Organize events and workshops</li>
+                            <li class="list-group-item">Coordinate placement activities</li>
+                        </ul>
+                        <a href="{% url 'accounts:login' %}?user_type=faculty" class="btn btn-primary w-100">Faculty Login</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">For Administrators</h3>
+                        <p class="card-text text-muted">Complete system management</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Manage students and faculty</li>
+                            <li class="list-group-item">Oversee events and activities</li>
+                            <li class="list-group-item">Coordinate with placement companies</li>
+                            <li class="list-group-item">System-wide administration</li>
+                        </ul>
+                        <a href="{% url 'accounts:login' %}?user_type=admin" class="btn btn-primary w-100">Admin Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section Preview -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">About Us</h2>
+        <p class="lead mb-4">Our college is committed to providing quality education and comprehensive development opportunities for all students. We strive for excellence in academics, research, and extracurricular activities.</p>
+        <a href="{% url 'core:about' %}" class="btn btn-outline-primary">Learn More About Us</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h4>College Management System</h4>
+                <p>A comprehensive platform for academic management</p>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h4>Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'core:about' %}" class="text-white">About Us</a></li>
+                    <li><a href="{% url 'core:vision' %}" class="text-white">Vision & Mission</a></li>
+                    <li><a href="{% url 'core:infrastructure' %}" class="text-white">Infrastructure</a></li>
+                    <li><a href="{% url 'accounts:login' %}" class="text-white">Login</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Contact</h4>
+                <address class="mb-0">
+                    <p>123 College Road</p>
+                    <p>Education City, State 12345</p>
+                    <p>Email: info@college.edu</p>
+                    <p>Phone: (123) 456-7890</p>
+                </address>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; {% now "Y" %} College Management System. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

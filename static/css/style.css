@@ -1,0 +1,136 @@
+/* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  min-height: calc(100vh - 56px);
+  background-color: #343a40;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styles */
+.btn {
+  font-weight: 500;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: auto;
+}
+
+/* Admin Dashboard */
+.admin-dashboard .card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Faculty Dashboard */
+.faculty-dashboard .status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.faculty-dashboard .status-present {
+  background-color: #28a745;
+}
+
+.faculty-dashboard .status-absent {
+  background-color: #dc3545;
+}
+
+.faculty-dashboard .status-event {
+  background-color: #17a2b8;
+}
+
+/* Student Dashboard */
+.student-dashboard .progress {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.student-dashboard .grade-a-plus {
+  color: #28a745;
+}
+
+.student-dashboard .grade-a {
+  color: #5cb85c;
+}
+
+.student-dashboard .grade-b-plus {
+  color: #5bc0de;
+}
+
+.student-dashboard .grade-b {
+  color: #17a2b8;
+}
+
+.student-dashboard .grade-c {
+  color: #ffc107;
+}
+
+.student-dashboard .grade-d {
+  color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+  }
+}
